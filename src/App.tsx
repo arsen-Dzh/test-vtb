@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+import { useTypedSelector } from './hooks/useTypedSelector';
+import { Login } from './pages/Login/Login';
+import { Navigation } from './components/Navigation/Navigation';
+import { privateRoutes } from './routes/privateRoutes';
 
 function App() {
+
+  const { auth } = useTypedSelector(state => state.user)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Router>
+      {
+        auth &&  <Navigation />
+      }
+        <Switch>
+          <Route path='/' component={Login} exact/>
+          {
+            privateRoutes.map((item, index) => (
+              // <Route key={item.path+index} path={item.path} component={item.page} exact/>
+              <Route key={item.path+index} exact path={item.path}>
+                {auth ? <item.page /> : <Redirect to="/" />}
+              </Route>
+            ))
+          }
+        </Switch>
+      </Router>
+    </>
+  )
 }
 
 export default App;

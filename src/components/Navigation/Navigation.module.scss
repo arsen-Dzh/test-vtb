@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px 30px;
+  background-color: #3f51b5;
+
+    div {
+      min-width: 400px;
+      padding: 20px 0 0 0;
+      display: flex;
+      justify-content: space-around;
+
+        a {
+          font-weight: 600;
+          color: #ffffff;
+          text-decoration: none;
+        }
+    }
+
+    button {
+      margin-top: 20px;
+    }
+}
