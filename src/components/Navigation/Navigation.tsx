@@ -21,7 +21,7 @@ export const Navigation: React.FC = () => {
     <div className={styles.navbar}>
       <div>
         <NavLink to='/new'>Создать новый</NavLink>
-        <NavLink to='/dashboard'>Дешборд</NavLink>
+        {/* <NavLink to='/dashboard'>Дешборд</NavLink> */}
         <NavLink to='/listing'>Листинг</NavLink>
       </div>
       <Button variant="contained" color="secondary" onClick={logoutHandler}>Выйти</Button>

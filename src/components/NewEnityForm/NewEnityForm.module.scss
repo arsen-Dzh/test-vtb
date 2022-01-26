@@ -1,0 +1,20 @@
+.enityForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-bottom: 10px;
+  // min-width: 400px;
+
+  input {
+    min-width: 400px;
+  }
+
+  button {
+    width: 100px;
+  }
+}
+
+.searchCity {
+  display: flex;
+  flex-direction: column;
+}

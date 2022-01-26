@@ -18,8 +18,8 @@ export const privateRoutes: IPrivateRoute[] = [
     path: '/listing',
     page: Listing
   },
-  {
-    path: '/dashboard',
-    page: Dashboard
-  }
+  // {
+  //   path: '/dashboard',
+  //   page: Dashboard
+  // }
 ]
